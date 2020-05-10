@@ -4,6 +4,7 @@
   "description": "A lambda function to get s3 bucket objects.",
   "private": true,
   "scripts": {
+    "build": "rollup -c --compact",
     "test": "echo \"Error: no test specified\" && exit 1",
     "typecheck": "tsc -p . --noEmit"
   },
@@ -22,6 +23,10 @@
   },
   "devDependencies": {
     "@types/node": "^13.13.5",
+    "rollup": "^2.8.2",
+    "rollup-plugin-filesize": "^8.0.2",
+    "rollup-plugin-progress": "^1.1.1",
+    "rollup-plugin-typescript2": "^0.27.0",
     "typescript": "^3.8.3"
   }
 }
