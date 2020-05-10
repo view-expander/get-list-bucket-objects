@@ -18,7 +18,7 @@ phases:
   post_build:
     commands:
       - cd dist
-      - zip -r getListBucketObjects.zip ./
+      - zip getListBucketObjects.zip index.js
     finally:
       - cd ../
 artifacts:
