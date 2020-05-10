@@ -18,3 +18,8 @@ phases:
   post_build:
     commands:
       - cd ./dist & zip -r getListBucketObjects.zip ./
+    finally:
+      - cd ../
+artifacts:
+  files:
+    - ./dist/getListBucketObjects.zip
