@@ -1,7 +1,6 @@
 import filesize from 'rollup-plugin-filesize'
 import progress from 'rollup-plugin-progress'
 import typescript from 'rollup-plugin-typescript2'
-import zip from 'rollup-plugin-zip'
 
 export default {
   input: './src/index.ts',
@@ -19,9 +18,5 @@ export default {
       },
     }),
     filesize(),
-    zip({
-      file: 'getListBucketObjects.zip',
-      dir: 'dist',
-    }),
   ],
 }

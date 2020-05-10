@@ -36,7 +36,6 @@
     "rollup-plugin-filesize": "^8.0.2",
     "rollup-plugin-progress": "^1.1.1",
     "rollup-plugin-typescript2": "^0.27.0",
-    "rollup-plugin-zip": "^1.0.1",
     "ts-jest": "^25.5.1",
     "typescript": "^3.8.3"
   },
