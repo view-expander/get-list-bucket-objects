@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+    commands:
+      - npm ci
+      - npm install --no-save aws-sdk
+  test:
+    commands:
+      - npm run lint
+      - npm run typecheck
+      - npm run test -- --ci
+  build:
+    commands:
+      - npm run build
