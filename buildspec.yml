@@ -17,4 +17,4 @@ phases:
       - npm run build
   post_build:
     commands:
-      - cd ./dist & zip -r bundle.zip ./
+      - cd ./dist & zip -r getListBucketObjects.zip ./
