@@ -4,7 +4,8 @@
   "description": "A lambda function to get s3 bucket objects.",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typecheck": "tsc -p . --noEmit"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,9 @@
   "homepage": "https://github.com/view-expander/get-list-bucket-objects#readme",
   "peerDependencies": {
     "aws-sdk": "^2.673.0"
+  },
+  "devDependencies": {
+    "@types/node": "^13.13.5",
+    "typescript": "^3.8.3"
   }
 }
