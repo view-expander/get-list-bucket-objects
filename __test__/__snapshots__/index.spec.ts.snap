@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`handler() be succeed 1`] = `
+Object {
+  "body": "[{\\"Key\\":\\"hoge.jpg\\",\\"LastModified\\":\\"2020-05-09T06:33:51.000Z\\",\\"ETag\\":\\"44c452ca6297705b5c7bea4246ecaf09\\",\\"Size\\":2636121,\\"StorageClass\\":\\"StorageClass\\"},{\\"Key\\":\\"piyo.jpg\\",\\"LastModified\\":\\"2020-05-09T06:33:51.000Z\\",\\"ETag\\":\\"37305f4d32679861ad71971c843ddbeb\\",\\"Size\\":1927537,\\"StorageClass\\":\\"StorageClass\\"},{\\"Key\\":\\"fuga.jpg\\",\\"LastModified\\":\\"2020-05-09T06:33:50.000Z\\",\\"ETag\\":\\"2e7d2444cbb4e79680a64288eeaa7d5e\\",\\"Size\\":2074755,\\"StorageClass\\":\\"StorageClass\\"}]",
+  "statusCode": 200,
+}
+`;
