@@ -17,9 +17,10 @@ phases:
       - npm run build
   post_build:
     commands:
-      - cd ./dist & zip -r getListBucketObjects.zip ./
+      - cd dist
+      - zip -r getListBucketObjects.zip ./
     finally:
       - cd ../
 artifacts:
   files:
-    - ./dist/getListBucketObjects.zip
+    - dist/getListBucketObjects.zip
