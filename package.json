@@ -1,0 +1,22 @@
+{
+  "name": "get-list-bucket-objects",
+  "version": "1.0.0",
+  "description": "A lambda function to get s3 bucket objects.",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/view-expander/get-list-bucket-objects.git"
+  },
+  "author": "KIMURA Tetsuro <haribote.nobody@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/view-expander/get-list-bucket-objects/issues"
+  },
+  "homepage": "https://github.com/view-expander/get-list-bucket-objects#readme",
+  "peerDependencies": {
+    "aws-sdk": "^2.673.0"
+  }
+}
