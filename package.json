@@ -1,5 +1,5 @@
 {
-  "name": "get-list-bucket-objects",
+  "name": "lambda-list-photo",
   "version": "1.0.0",
   "description": "A lambda function to get s3 bucket objects.",
   "private": true,

@@ -18,6 +18,6 @@ phases:
 artifacts:
   files:
     - '**/*.js'
-  name: getListBucketObjects
+  name: lambda-list-photo
   base-directory: 'dist'
   discard-paths: yes
