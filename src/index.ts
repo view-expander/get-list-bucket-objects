@@ -14,7 +14,11 @@ export async function handler(): Promise<APIGatewayProxyResult> {
 
     return {
       statusCode: res.$response.httpResponse.statusCode,
-      body: JSON.stringify(res.Contents),
+      body: JSON.stringify(
+        (res.Contents || []).filter(
+          (item) => item.Key && /^.+\.jpe?g$/i.test(item.Key)
+        )
+      ),
     }
   } catch (err) {
     return {

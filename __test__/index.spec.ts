@@ -25,7 +25,7 @@ describe('handler()', () => {
               StorageClass: 'StorageClass',
             },
             {
-              Key: 'piyo.jpg',
+              Key: 'piyo.svg',
               LastModified: '2020-05-09T06:33:51.000Z',
               ETag: '37305f4d32679861ad71971c843ddbeb',
               Size: 1927537,
