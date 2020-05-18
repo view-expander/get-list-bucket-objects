@@ -10,7 +10,7 @@ export async function handler(): Promise<APIGatewayProxyResult> {
       throw new Error('Bucket name is required')
     }
 
-    const res = await s3.listObjectsV2({ Bucket }).promise()
+    const res = await s3.listObjectsV2({ Bucket, Prefix: 'source/' }).promise()
 
     return {
       statusCode: res.$response.httpResponse.statusCode,
