@@ -24,7 +24,11 @@ export async function handler(
     }
   } catch (err) {
     return {
-      statusCode: err.statusCode || 400,
+      statusCode: err.statusCode || 500,
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+      },
       body: err.message,
     }
   }
