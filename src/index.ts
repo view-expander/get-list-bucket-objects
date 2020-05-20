@@ -12,7 +12,7 @@ export async function handler(
       throw new Error('Bucket name is required')
     }
 
-    const ContinuationToken = event.queryStringParameters?.NextContinuationToken
+    const ContinuationToken = event.queryStringParameters?.ContinuationToken
     const MaxKeys = Number(event.queryStringParameters?.MaxKeys || 100)
     const res = await s3
       .listObjectsV2({ Bucket, ContinuationToken, MaxKeys, Prefix: 'source/' })
