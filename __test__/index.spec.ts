@@ -39,6 +39,11 @@ describe('handler()', () => {
               StorageClass: 'StorageClass',
             },
           ],
+          Name: 'TARGET_BUCKET_NAME',
+          Prefix: 'source/',
+          MaxKeys: 1000,
+          CommonPrefixes: [],
+          KeyCount: 3,
         }),
       }))
   })
