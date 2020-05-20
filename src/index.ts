@@ -1,8 +1,10 @@
+import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda'
 import * as AWS from 'aws-sdk'
-import { APIGatewayProxyResult } from 'aws-lambda'
 const s3 = new AWS.S3()
 
-export async function handler(): Promise<APIGatewayProxyResult> {
+export async function handler(
+  event: APIGatewayProxyEvent
+): Promise<APIGatewayProxyResult> {
   try {
     const Bucket = process.env.BUCKET
 
@@ -10,7 +12,11 @@ export async function handler(): Promise<APIGatewayProxyResult> {
       throw new Error('Bucket name is required')
     }
 
-    const res = await s3.listObjectsV2({ Bucket, Prefix: 'source/' }).promise()
+    const ContinuationToken = event.queryStringParameters?.NextContinuationToken
+    const MaxKeys = Number(event.queryStringParameters?.MaxKeys || 100)
+    const res = await s3
+      .listObjectsV2({ Bucket, ContinuationToken, MaxKeys, Prefix: 'source/' })
+      .promise()
 
     return {
       statusCode: res.$response.httpResponse.statusCode,

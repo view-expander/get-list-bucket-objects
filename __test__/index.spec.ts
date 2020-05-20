@@ -41,9 +41,10 @@ describe('handler()', () => {
           ],
           Name: 'TARGET_BUCKET_NAME',
           Prefix: 'source/',
-          MaxKeys: 1000,
+          MaxKeys: 100,
           CommonPrefixes: [],
-          KeyCount: 3,
+          KeyCount: 100,
+          NextContinuationToken: 'DUMMY_TOKEN',
         }),
       }))
   })
@@ -58,6 +59,10 @@ describe('handler()', () => {
     // set environments
     process.env.BUCKET = 'TARGET_BUCKET_NAME'
 
-    return expect(handler()).resolves.toMatchSnapshot()
+    return expect(
+      handler({
+        queryStringParameters: null,
+      } as any)
+    ).resolves.toMatchSnapshot()
   })
 })
