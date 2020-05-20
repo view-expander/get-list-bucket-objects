@@ -19,8 +19,15 @@ export async function handler(
 
     const ContinuationToken = event.queryStringParameters?.ContinuationToken
     const MaxKeys = Number(event.queryStringParameters?.MaxKeys || 100)
+    const Prefix = 'source/'
     const res = await s3
-      .listObjectsV2({ Bucket, ContinuationToken, MaxKeys, Prefix: 'source/' })
+      .listObjectsV2({
+        Bucket,
+        ContinuationToken,
+        MaxKeys,
+        Prefix,
+        StartAfter: Prefix,
+      })
       .promise()
 
     return {
