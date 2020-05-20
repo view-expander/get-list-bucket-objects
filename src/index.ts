@@ -2,6 +2,11 @@ import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda'
 import * as AWS from 'aws-sdk'
 const s3 = new AWS.S3()
 
+const SHARED_RESPONSE_HEADER = {
+  'Access-Control-Allow-Origin': '*',
+  'Content-Type': 'application/json',
+} as const
+
 export async function handler(
   event: APIGatewayProxyEvent
 ): Promise<APIGatewayProxyResult> {
@@ -20,14 +25,16 @@ export async function handler(
 
     return {
       statusCode: res.$response.httpResponse.statusCode,
+      headers: {
+        ...SHARED_RESPONSE_HEADER,
+      },
       body: JSON.stringify(res),
     }
   } catch (err) {
     return {
       statusCode: err.statusCode || 500,
       headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
+        ...SHARED_RESPONSE_HEADER,
       },
       body: err.message,
     }
