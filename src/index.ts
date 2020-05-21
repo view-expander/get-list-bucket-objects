@@ -35,7 +35,16 @@ export async function handler(
       headers: {
         ...SHARED_RESPONSE_HEADER,
       },
-      body: JSON.stringify(res),
+      body: JSON.stringify({
+        ...res,
+        Contents: (res.Contents || []).map((item) => ({
+          ...item,
+          Key:
+            typeof item.Key === 'string'
+              ? item.Key.replace(Prefix, '')
+              : undefined,
+        })),
+      }),
     }
   } catch (err) {
     return {
