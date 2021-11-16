@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/view-expander/get-list-bucket-objects#readme",
   "dependencies": {
-    "aws-sdk": "^2.673.0"
+    "aws-sdk": "^2.814.0"
   },
   "devDependencies": {
     "@maboroshi/eslint-config": "^2.0.9",
